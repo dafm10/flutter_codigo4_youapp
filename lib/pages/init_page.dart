@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_codigo4_youapp/pages/home_page.dart';
+import 'package:flutter_codigo4_youapp/pages/library_page.dart';
 import 'package:flutter_codigo4_youapp/pages/subscription_page.dart';
 
 class InitPage extends StatefulWidget {
@@ -19,9 +20,7 @@ class _InitPageState extends State<InitPage> {
       child: Text("Page 3"),
     ),
     SubscriptionPage(),
-    Center(
-      child: Text("Page 5"),
-    ),
+    LibraryPage(),
   ];
 
   int _index = 0;
