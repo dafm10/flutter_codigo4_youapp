@@ -10,6 +10,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  int indexFilter = 0;
+
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
@@ -53,27 +56,63 @@ class _HomePageState extends State<HomePage> {
                     ),
                     ItemFilterWidget(
                       nameFilter: "Todos",
-                      selected: false,
+                      selected: indexFilter == 0 ? true : false,
+                      onPressed: (){
+                        indexFilter = 0;
+                        setState(() {
+
+                        });
+                      },
                     ),
                     ItemFilterWidget(
                       nameFilter: "Podcast",
-                      selected: true,
+                      selected: indexFilter == 1 ? true : false,
+                      onPressed: (){
+                        indexFilter = 1;
+                        setState(() {
+
+                        });
+                      },
                     ),
                     ItemFilterWidget(
                       nameFilter: "Comedia",
-                      selected: false,
+                      selected: indexFilter == 2 ? true : false,
+                      onPressed: (){
+                        indexFilter = 2;
+                        setState(() {
+
+                        });
+                      },
                     ),
                     ItemFilterWidget(
                       nameFilter: "Flutter",
-                      selected: false,
+                      selected: indexFilter == 3 ? true : false,
+                      onPressed: (){
+                        indexFilter = 3;
+                        setState(() {
+
+                        });
+                      },
                     ),
                     ItemFilterWidget(
                       nameFilter: "Programación",
-                      selected: false,
+                      selected: indexFilter == 4 ? true : false,
+                      onPressed: (){
+                        indexFilter = 4;
+                        setState(() {
+
+                        });
+                      },
                     ),
                     ItemFilterWidget(
                       nameFilter: "Apple",
-                      selected: false,
+                      selected: indexFilter == 5 ? true : false,
+                      onPressed: (){
+                        indexFilter = 5;
+                        setState(() {
+
+                        });
+                      },
                     ),
                   ],
                 ),

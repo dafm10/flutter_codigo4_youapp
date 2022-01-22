@@ -11,6 +11,9 @@ class SubscriptionPage extends StatefulWidget {
 }
 
 class _SubscriptionPageState extends State<SubscriptionPage> {
+
+  int indexFilter = 0;
+
   @override
   Widget build(BuildContext context) {
     double _height = MediaQuery.of(context).size.height;
@@ -70,12 +73,66 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    ItemFilterWidget(nameFilter: "Todos", selected: true),
-                    ItemFilterWidget(nameFilter: "Hoy", selected: false),
-                    ItemFilterWidget(nameFilter: "Continua mirando", selected: false),
-                    ItemFilterWidget(nameFilter: "Sin mirar", selected: false),
-                    ItemFilterWidget(nameFilter: "En tiempo real", selected: false),
-                    ItemFilterWidget(nameFilter: "Publicaciones", selected: false),
+                    ItemFilterWidget(
+                      nameFilter: "Todos",
+                      selected: indexFilter == 0 ? true : false,
+                      onPressed: () {
+                        indexFilter = 0;
+                        setState(() {
+
+                        });
+                      },
+                    ),
+                    ItemFilterWidget(
+                      nameFilter: "Hoy",
+                      selected: indexFilter == 1 ? true : false,
+                      onPressed: () {
+                        indexFilter = 1;
+                        setState(() {
+
+                        });
+                      },
+                    ),
+                    ItemFilterWidget(
+                      nameFilter: "Continua mirando",
+                      selected: indexFilter == 2 ? true : false,
+                      onPressed: () {
+                        indexFilter = 2;
+                        setState(() {
+
+                        });
+                      },
+                    ),
+                    ItemFilterWidget(
+                      nameFilter: "Sin mirar",
+                      selected: indexFilter == 3 ? true : false,
+                      onPressed: () {
+                        indexFilter = 3;
+                        setState(() {
+
+                        });
+                      },
+                    ),
+                    ItemFilterWidget(
+                      nameFilter: "En tiempo real",
+                      selected: indexFilter == 4 ? true : false,
+                      onPressed: () {
+                        indexFilter = 4;
+                        setState(() {
+
+                        });
+                      },
+                    ),
+                    ItemFilterWidget(
+                      nameFilter: "Publicaciones",
+                      selected: indexFilter == 5 ? true : false,
+                      onPressed: () {
+                        indexFilter = 5;
+                        setState(() {
+
+                        });
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -89,4 +146,3 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
     );
   }
 }
-

@@ -5,8 +5,9 @@ class ItemFilterWidget extends StatelessWidget {
 
   String nameFilter;
   bool selected;
+  Function onPressed;
 
-  ItemFilterWidget({required this.nameFilter, required this.selected});
+  ItemFilterWidget({required this.nameFilter, required this.selected, required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class ItemFilterWidget extends StatelessWidget {
           ),
         ),
         onSelected: (bool value) {
-
+          onPressed();
         },
       ),
     );
