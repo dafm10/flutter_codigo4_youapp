@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo4_youapp/ui/widgets/item_filter_widget.dart';
 import 'package:flutter_codigo4_youapp/ui/widgets/item_list_video_widget.dart';
 
 class HomePage extends StatefulWidget {
@@ -50,51 +51,29 @@ class _HomePageState extends State<HomePage> {
                         width: 28.0,
                       ),
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(right: 15.0),
-                      child: FilterChip(
-                        label: Text("Todos"),
-                        onSelected: (bool value) {},
-                      ),
+                    ItemFilterWidget(
+                      nameFilter: "Todos",
+                      selected: false,
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(right: 15.0),
-                      child: FilterChip(
-                        backgroundColor: Color(0xff2E2E2E),
-                        label: Text(
-                          "Podcast",
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        onSelected: (bool value) {},
-                      ),
+                    ItemFilterWidget(
+                      nameFilter: "Podcast",
+                      selected: true,
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(right: 10.0),
-                      child: FilterChip(
-                        backgroundColor: Color(0xff2E2E2E),
-                        label: Text(
-                          "Programación",
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        onSelected: (bool value) {},
-                      ),
+                    ItemFilterWidget(
+                      nameFilter: "Comedia",
+                      selected: false,
                     ),
-                    Container(
-                      margin: const EdgeInsets.only(right: 10.0),
-                      child: FilterChip(
-                        backgroundColor: Color(0xff2E2E2E),
-                        label: Text(
-                          "Comics",
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                        onSelected: (bool value) {},
-                      ),
+                    ItemFilterWidget(
+                      nameFilter: "Flutter",
+                      selected: false,
+                    ),
+                    ItemFilterWidget(
+                      nameFilter: "Programación",
+                      selected: false,
+                    ),
+                    ItemFilterWidget(
+                      nameFilter: "Apple",
+                      selected: false,
                     ),
                   ],
                 ),
@@ -110,4 +89,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
