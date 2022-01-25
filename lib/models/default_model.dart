@@ -11,9 +11,9 @@ class Default {
   });
 
   factory Default.fromJson(Map<String, dynamic> json) => Default(
-    url: json["url"],
-    width: json["width"],
-    height: json["height"],
+    url: json["url"] ?? "",
+    width: json["width"] ?? 0,
+    height: json["height"] ?? 0,
   );
 
   Map<String, dynamic> toJson() => {

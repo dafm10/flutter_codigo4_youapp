@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo4_youapp/services/api_services.dart';
 import 'package:flutter_codigo4_youapp/ui/widgets/item_filter_widget.dart';
 import 'package:flutter_codigo4_youapp/ui/widgets/item_list_video_widget.dart';
 
@@ -11,7 +12,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
 
+  APIService _apiService = APIService();
   int indexFilter = 0;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _apiService.getVideoList();
+  }
 
   @override
   Widget build(BuildContext context) {
