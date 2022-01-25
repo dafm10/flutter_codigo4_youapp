@@ -136,9 +136,8 @@ class _SubscriptionPageState extends State<SubscriptionPage> {
                   ],
                 ),
               ),
-              ItemListVideoWidget(),
-              ItemListVideoWidget(),
-              ItemListVideoWidget(),
+              //ItemListVideoWidget(),
+
             ],
           ),
         ),

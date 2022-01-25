@@ -2,10 +2,18 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ItemListVideoWidget extends StatelessWidget {
+  String imgage;
+  String title;
+  String channelTitle;
+
+  ItemListVideoWidget({
+    required this.imgage,
+    required this.title,
+    required this.channelTitle,
+  });
 
   @override
   Widget build(BuildContext context) {
-
     double _height = MediaQuery.of(context).size.height;
 
     return Container(
@@ -14,10 +22,13 @@ class ItemListVideoWidget extends StatelessWidget {
         children: [
           Stack(
             children: [
-              Image.network(
-                "https://pbs.twimg.com/media/FIvl3LOXwAIQ358?format=jpg&name=large",
-                height: _height * 0.3,
-                fit: BoxFit.cover,
+              Container(
+                width: double.infinity,
+                child: Image.network(
+                  imgage,
+                  height: _height * 0.3,
+                  fit: BoxFit.cover,
+                ),
               ),
               Positioned(
                 bottom: 0,
@@ -49,7 +60,7 @@ class ItemListVideoWidget extends StatelessWidget {
               ),
             ),
             title: Text(
-              "RabbitMQ Tutorial - Message Queues and Distributed Systems",
+              title,
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: TextStyle(
@@ -60,7 +71,7 @@ class ItemListVideoWidget extends StatelessWidget {
             subtitle: Container(
               margin: const EdgeInsets.symmetric(vertical: 4.0),
               child: Text(
-                "Amigoscode - 9.2 K vistas - hace 1 día",
+                "$channelTitle - 9.2 K vistas - hace 1 día",
                 style: TextStyle(
                   color: Colors.white54,
                   fontSize: 12.0,

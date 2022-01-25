@@ -24,13 +24,13 @@ class Snippet {
 
   factory Snippet.fromJson(Map<String, dynamic> json) => Snippet(
     publishedAt: DateTime.parse(json["publishedAt"]),
-    channelId: json["channelId"],
+    channelId: json["channelId"] ?? "",
     title: json["title"],
     description: json["description"],
     thumbnails: Thumbnails.fromJson(json["thumbnails"]),
-    channelTitle: json["channelTitle"],
-    liveBroadcastContent: json["liveBroadcastContent"],
-    publishTime: DateTime.parse(json["publishTime"]),
+    channelTitle: json["channelTitle"] ?? "",
+    liveBroadcastContent: json["liveBroadcastContent"] ?? "",
+    publishTime: json["publishTime"] != null ? DateTime.parse(json["publishTime"]) : DateTime.now(),
   );
 
   Map<String, dynamic> toJson() => {

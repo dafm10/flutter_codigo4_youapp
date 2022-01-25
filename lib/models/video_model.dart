@@ -6,27 +6,30 @@ class VideoModel {
 
   String kind;
   String etag;
-  Id id;
+  Id? id;
+  String? id2;
   Snippet snippet;
 
   VideoModel({
     required this.kind,
     required this.etag,
     required this.id,
+    this.id2,
     required this.snippet,
   });
 
   factory VideoModel.fromJson(Map<String, dynamic> json) => VideoModel(
     kind: json["kind"],
     etag: json["etag"],
-    id: Id.fromJson(json["id"]),
+    id: json["id"] is String ? null : Id.fromJson(json["id"]),
+    id2: json["id"] is String ? json["id"] : null,
     snippet: Snippet.fromJson(json["snippet"]),
   );
 
   Map<String, dynamic> toJson() => {
     "kind": kind,
     "etag": etag,
-    "id": id.toJson(),
+    "id": id != null ? id!.toJson() : "",
     "snippet": snippet.toJson(),
   };
 }
