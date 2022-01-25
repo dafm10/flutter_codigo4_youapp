@@ -1,16 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_codigo4_youapp/models/video_model.dart';
+import 'package:flutter_codigo4_youapp/services/api_services.dart';
 
 class ItemListVideoWidget extends StatelessWidget {
   String imgage;
   String title;
   String channelTitle;
+  
 
   ItemListVideoWidget({
     required this.imgage,
     required this.title,
     required this.channelTitle,
   });
+  
+  APIService _apiService =APIService();
 
   @override
   Widget build(BuildContext context) {
@@ -53,11 +58,20 @@ class ItemListVideoWidget extends StatelessWidget {
             ],
           ),
           ListTile(
-            leading: CircleAvatar(
-              radius: 16.0,
-              backgroundImage: NetworkImage(
-                "https://yt3.ggpht.com/ytc/AKedOLRFUNsF6J0E_KURLUU3D0vqXiyhylruAKhmFqMhL3o=s176-c-k-c0x00ffffff-no-rj",
-              ),
+            leading: FutureBuilder(
+              future: _apiService.getVideo("UCKTWUJqT3NSZ50I49ExjWZQ"),
+              builder: (BuildContext context, AsyncSnapshot snap){
+                if(snap.hasData){
+                  VideoModel video = snap.data;
+                  return CircleAvatar(
+                    radius: 16.0,
+                    backgroundImage: NetworkImage(
+                      video.snippet.thumbnails.high.url,
+                    ),
+                  );
+                }
+                return CircularProgressIndicator();
+              },
             ),
             title: Text(
               title,
