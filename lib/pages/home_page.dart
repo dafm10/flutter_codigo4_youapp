@@ -142,6 +142,7 @@ class _HomePageState extends State<HomePage> {
                         imgage: videoList[index].snippet.thumbnails.high.url,
                         title: videoList[index].snippet.title,
                         channelTitle: videoList[index].snippet.channelTitle,
+                        channelId: videoList[index].snippet.channelId,
                       );
                     },
                   ),

@@ -7,12 +7,14 @@ class ItemListVideoWidget extends StatelessWidget {
   String imgage;
   String title;
   String channelTitle;
+  String channelId;
   
 
   ItemListVideoWidget({
     required this.imgage,
     required this.title,
     required this.channelTitle,
+    required this.channelId,
   });
   
   APIService _apiService =APIService();
@@ -59,7 +61,7 @@ class ItemListVideoWidget extends StatelessWidget {
           ),
           ListTile(
             leading: FutureBuilder(
-              future: _apiService.getVideo("UCKTWUJqT3NSZ50I49ExjWZQ"),
+              future: _apiService.getVideo(channelId),
               builder: (BuildContext context, AsyncSnapshot snap){
                 if(snap.hasData){
                   VideoModel video = snap.data;
